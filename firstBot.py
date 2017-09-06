@@ -16,9 +16,9 @@ path = '~/Documents/Fun/RedditBot/temp.txt'
 
 
 
-def authenicate():
+def authenticate():
     print("Authenticating...")
-    reddit = praw.Reddit('nuzzyfipplesbot', user_agent='nuzzyfipplestestbot')
+    reddit = praw.Reddit('nuzzyfipplestestbot', user_agent='nuzzyfipplestestbot')
     print("Authenticated as {}\n".format(reddit.user.me()))
     return reddit
 
@@ -30,7 +30,7 @@ def fetchdata(url):
     tag = soup.find('p')
     data = ' '
     while True:
-        if isinstance(tag bs4.element.Tag):
+        if isinstance(tag, bs4.element.Tag):
             if (tag.name == 'h2'):
                 break
             if (tag.name == 'h3'):
@@ -42,3 +42,10 @@ def fetchdata(url):
             tag = tag.nextSibling
 
     return data
+
+
+def main():
+    reddit = authenticate()
+
+if __name__ == '__main__':
+        main()
