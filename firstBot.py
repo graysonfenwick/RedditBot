@@ -66,20 +66,18 @@ def run_bot(reddit):
                 if comment.id not in file_obj_r.read().splitlines():
                     print('Link is unique...posting explanation\n')
                     comment.reply(header + explanation + footer) 
-			
-					file_obj_r.close()
-
-	                file_obj_w = open(path,'a+')
-    	            file_obj_w.write(comment.id + '\n')
-        	        file_obj_w.close()
-            	else:
-                	print('Already visited link...No reply needed\n')
+                    file_obj_r.close();
+                    file_obj_w = open(path,'a+')
+                    file_obj_w.write(comment.id + '\n')
+                    file_obj_w.close()
+                else:
+                    print('Already visited link...No reply needed\n')
 
 
 def main():
     reddit = authenticate()
-	while True:
-		run_bot(reddit)
+    while True:
+        run_bot(reddit)
 
 if __name__ == '__main__':
         main()
